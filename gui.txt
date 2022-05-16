@@ -1,0 +1,33 @@
+if(jFileChooser1.showOpenDialog(this) == JFileChooser.APPROVE_OPTION){
+setTitle("megnyitás:" + jFileChooser1.getSelectedFile().getName());}
+
+--- Bezárás
+private void bezaras(){
+	if(JOptionPane.showConfirmDialog(this, "Biztos kilép?", "Kilépés", JOptionPane.OK_CANCEL_OPTION) == JOptionPane.OK_OPTION){
+		System.exit(0);
+	}
+}
+
+---txt -be mentés
+Stirng szoveg = "";
+Files.write(Paths.get("valami.txt"), szoveg.getBytes());
+-> try, -catch
+
+---if feltétel
+if(evt.getActionCommand().contains("1")){} //ha tartalmazza az '1' karaktert
+
+---szöveg 'vágás'
+String szoveg = evt.getActionCommand();
+
+1.
+String szam = szoveg.charAt(7) + "";
+
+2.
+String[] tomb = szoveg.split(":");
+szam= tomb[1];
+
+3.
+int poz=szoveg.indexOf(":"); //hanyadik helyen áll a ':'
+szam=szoveg.substring(poz+1);
+
+int egesz = Integer.parseInt(szam); //

@@ -1,0 +1,55 @@
+Konzolos.
+.gitignore (gitignore.io -> java,netbeans) fájl és readme.md
+
+Git:
+cmd -> git status
+git add .
+git commit -m "1f:..."
+git commit -am "2f:..."
+
+---
+KT:
+private Data / LocalDate letrehozas;
+Data d1=new Date();
+LocalDate d2= LocalDate.now();
+
+G:
+private File eleres;
+contsruktor: eleres = new File("nincs");
+
+van e ilyen file: if(eleres.exists()){}
+
+LocalDate.parse("2023-04-30")
+LocalDate.of(2022.03.20)
+
+ha tárgy festmény: if(targy instanceof Festmeny)
+
+Serializable:
+ObjectOutputStream objKI = new O..(new FileOutput..("galeria.bin"));
+objKi.writeObject(galeria);
+objKi.close();
+
+
+----
+git init
+
+Komit írás:
+git add .
+git commit -m nev
+
+Komit írás:
+git commit -am nev
+
+git log --oneline
+
+branch:
+git branch nev --branch létrehozása
+git checkout nev -- át állni másik branch-re
+git merge nev
+
+git push link main --fel tenni a projektet a repoba
+
+git config --global alias.lo "log --oneline" 
+git lo
+
+git checkout szamok --commit állaptra lépni
