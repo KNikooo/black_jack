@@ -31,3 +31,31 @@ int poz=szoveg.indexOf(":"); //hanyadik helyen áll a ':'
 szam=szoveg.substring(poz+1);
 
 int egesz = Integer.parseInt(szam); //
+
+
+--- txt beolvasas
+public void adatBeolvas() {
+        List<String> sorok = null;
+        try {
+            sorok = Files.readAllLines(Paths.get("emberek.txt"));
+        } catch (IOException ex) {
+            Logger.getLogger(Szoveges.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        for (String sor : sorok) {
+            String[] adatok = sor.split(";");
+            if (adatok.length == 4) {
+                emberek.add(new Ember(adatok[0], Integer.parseInt(adatok[1]), adatok[2], Integer.parseInt(adatok[3])));
+            } else {
+                emberek.add(new Ember(adatok[0], Integer.parseInt(adatok[1]), adatok[2]));
+            }
+        }
+    }
+    
+ --- rendezes:
+implements Comparable<Ember>
+
+@Override
+    public int compareTo(Ember e) {
+        return this.getKor() - e.getKor();
+    }
+
